@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free UPI QR Code Generator for India</title>
+<style>
+body {margin:0;font-family:Arial;background:#0f172a;color:#fff}
+.container {max-width:1100px;margin:auto;padding:20px}
+.hero {text-align:center;padding:80px 20px}
+.hero h1 {font-size:48px;margin-bottom:20px}
+.hero p {font-size:18px;color:#cbd5f5}
+.btn {background:#22c55e;color:#fff;padding:15px 30px;border:none;border-radius:8px;font-size:16px;cursor:pointer}
+.section {padding:60px 20px}
+.card {background:#1e293b;padding:20px;border-radius:12px;margin:10px}
+.grid {display:flex;flex-wrap:wrap;gap:20px}
+.footer {text-align:center;padding:30px;color:#94a3b8}
+input {padding:12px;margin:10px;width:90%;border-radius:6px;border:none}
+.qr-box {margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>Free UPI QR Code Generator for India</h1>
+<p>Create UPI payment QR codes instantly for GPay, PhonePe & Paytm. No login required.</p>
+<button class="btn" onclick="scrollToTool()">Generate QR Now</button>
+</div>
+
+<div class="section container" id="tool">
+<h2>Generate Your UPI QR Code</h2>
+<input type="text" id="upi" placeholder="Enter UPI ID">
+<input type="text" id="name" placeholder="Enter Name">
+<input type="number" id="amount" placeholder="Enter Amount (Optional)">
+<br>
+<button class="btn" onclick="generateQR()">Generate QR Code</button>
+<div class="qr-box" id="qr"></div>
+</div>
+
+<div class="section container">
+<h2>Why Use This UPI QR Generator?</h2>
+<div class="grid">
+<div class="card">Instant QR generation in seconds</div>
+<div class="card">Supports all UPI apps</div>
+<div class="card">No data stored – 100% secure</div>
+<div class="card">Free forever tool</div>
+</div>
+</div>
+
+<div class="section container">
+<h2>What is a UPI QR Code?</h2>
+<p>A UPI QR code allows users to make payments quickly by scanning using any UPI app. It eliminates manual entry and reduces errors. This tool helps you generate a QR code that can be shared anywhere.</p>
+</div>
+
+<div class="section container">
+<h2>How to Use</h2>
+<p>1. Enter your UPI ID<br>2. Add name & amount (optional)<br>3. Click generate<br>4. Download or share QR code</p>
+</div>
+
+<div class="footer">
+<p>© 2026 Free UPI QR Generator | Built for India</p>
+</div>
+
+<script>
+function scrollToTool(){
+ document.getElementById('tool').scrollIntoView({behavior:'smooth'});
+}
+
+function generateQR(){
+ let upi=document.getElementById('upi').value;
+ let name=document.getElementById('name').value;
+ let amount=document.getElementById('amount').value;
+
+ let url=`upi://pay?pa=${upi}&pn=${name}&am=${amount}&cu=INR`;
+
+ document.getElementById('qr').innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}">`;
+}
+</script>
+
+</body>
+</html>
 
