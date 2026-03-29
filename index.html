@@ -3,40 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Free UPI QR Code Generator for India</title>
+<meta name="description" content="Generate UPI QR codes instantly for Google Pay, PhonePe & Paytm. Free, secure and easy tool for India.">
+
 <style>
-body {margin:0;font-family:Arial;background:#0f172a;color:#fff}
-.container {max-width:1100px;margin:auto;padding:20px}
-.hero {text-align:center;padding:80px 20px}
-.hero h1 {font-size:48px;margin-bottom:20px}
-.hero p {font-size:18px;color:#cbd5f5}
-.btn {background:#22c55e;color:#fff;padding:15px 30px;border:none;border-radius:8px;font-size:16px;cursor:pointer}
-.section {padding:60px 20px}
-.card {background:#1e293b;padding:20px;border-radius:12px;margin:10px}
-.grid {display:flex;flex-wrap:wrap;gap:20px}
-.footer {text-align:center;padding:30px;color:#94a3b8}
-input {padding:12px;margin:10px;width:90%;border-radius:6px;border:none}
-.qr-box {margin-top:20px}
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:#fff;
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.hero {
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h1 {
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero p {
+  font-size:18px;
+  color:#cbd5f5;
+}
+
+.btn {
+  background:#22c55e;
+  color:#fff;
+  padding:15px 30px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.section {
+  padding:60px 20px;
+}
+
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  margin:10px;
+}
+
+.grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer {
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+}
+
+input {
+  padding:12px;
+  margin:10px;
+  width:90%;
+  border-radius:6px;
+  border:none;
+}
+
+.qr-box {
+  margin-top:20px;
+}
 </style>
 </head>
+
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Free UPI QR Code Generator for India</h1>
-<p>Create UPI payment QR codes instantly for GPay, PhonePe & Paytm. No login required.</p>
+<p>Create UPI payment QR codes instantly. No login required.</p>
 <button class="btn" onclick="scrollToTool()">Generate QR Now</button>
 </div>
 
+<!-- TOOL -->
 <div class="section container" id="tool">
 <h2>Generate Your UPI QR Code</h2>
+
 <input type="text" id="upi" placeholder="Enter UPI ID">
 <input type="text" id="name" placeholder="Enter Name">
 <input type="number" id="amount" placeholder="Enter Amount (Optional)">
+
 <br>
 <button class="btn" onclick="generateQR()">Generate QR Code</button>
+
 <div class="qr-box" id="qr"></div>
 </div>
 
+<!-- FEATURES -->
 <div class="section container">
 <h2>Why Use This UPI QR Generator?</h2>
 <div class="grid">
@@ -47,20 +117,61 @@ input {padding:12px;margin:10px;width:90%;border-radius:6px;border:none}
 </div>
 </div>
 
+<!-- INFO -->
 <div class="section container">
 <h2>What is a UPI QR Code?</h2>
-<p>A UPI QR code allows users to make payments quickly by scanning using any UPI app. It eliminates manual entry and reduces errors. This tool helps you generate a QR code that can be shared anywhere.</p>
+<p>
+A UPI QR code allows users to make payments instantly by scanning using any UPI app.
+It eliminates manual entry and ensures faster and error-free transactions.
+</p>
 </div>
 
+<!-- HOW TO -->
 <div class="section container">
 <h2>How to Use</h2>
-<p>1. Enter your UPI ID<br>2. Add name & amount (optional)<br>3. Click generate<br>4. Download or share QR code</p>
+<p>
+1. Enter your UPI ID<br>
+2. Add name & amount (optional)<br>
+3. Click generate<br>
+4. Scan and receive payments instantly
+</p>
 </div>
 
+<!-- BACKLINK SECTION 🔥 -->
+<div class="section container">
+<h2>Best Free UPI QR Code Generator in India</h2>
+
+<p>
+Looking for a fast and secure way to create UPI QR codes? Try our 
+<a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank" rel="dofollow">
+Free UPI QR Code Generator
+</a> 
+to instantly generate payment QR codes for Google Pay, PhonePe, and Paytm.
+</p>
+
+<p>
+This tool allows you to generate static and dynamic QR codes without any login. 
+Explore the full tool here:
+<a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank" rel="dofollow">
+UPI QR Code Generator India
+</a>.
+</p>
+
+<p>
+Direct access:
+<a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank" rel="dofollow">
+https://rohitsharma.co/upi-qr-code-generator/
+</a>
+</p>
+
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
 <p>© 2026 Free UPI QR Generator | Built for India</p>
 </div>
 
+<!-- SCRIPT -->
 <script>
 function scrollToTool(){
  document.getElementById('tool').scrollIntoView({behavior:'smooth'});
@@ -73,10 +184,10 @@ function generateQR(){
 
  let url=`upi://pay?pa=${upi}&pn=${name}&am=${amount}&cu=INR`;
 
- document.getElementById('qr').innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}">`;
+ document.getElementById('qr').innerHTML=
+ `<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}">`;
 }
 </script>
 
 </body>
 </html>
-
