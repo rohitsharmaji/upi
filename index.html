@@ -7,11 +7,21 @@
 <title>Free UPI QR Code Generator for India</title>
 
 <style>
+
+/* 🌌 BACKGROUND ANIMATION */
 body {
   margin:0;
-  font-family:Arial;
-  background:#0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(270deg, #0f172a, #020617, #0f172a);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
   color:#fff;
+}
+
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 .container {
@@ -20,50 +30,77 @@ body {
   padding:20px;
 }
 
+/* 🚀 HERO */
 .hero {
   text-align:center;
-  padding:100px 20px;
+  padding:120px 20px;
 }
 
 .hero h1 {
-  font-size:48px;
+  font-size:52px;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
+  font-size:18px;
   color:#cbd5f5;
 }
 
-/* BUTTON */
+/* 🔥 BUTTON */
 .btn {
+  margin-top:20px;
   background: linear-gradient(45deg, #22c55e, #16a34a);
-  color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+  color:#fff;
+  padding:16px 35px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow: 0 0 20px rgba(34,197,94,0.5);
+  transition:0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(34,197,94,0.9);
 }
 
+/* ✨ CARDS */
 .section {
-  padding:60px 20px;
+  padding:80px 20px;
+  text-align:center;
 }
 
-input {
-  padding:12px;
-  margin:10px;
-  width:90%;
-  border-radius:6px;
-  border:none;
+.grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
 }
 
-.qr-box {
-  margin-top:20px;
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding:25px;
+  border-radius:15px;
+  width:250px;
+  transition:0.3s;
 }
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* 📦 FOOTER */
+.footer {
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+}
+
 </style>
 </head>
 
@@ -71,52 +108,48 @@ input {
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Free UPI QR Code Generator for India</h1>
-  <p>Create QR codes instantly for payments</p>
+  <h1>Free UPI QR Code Generator</h1>
+  
+  <p>Create UPI QR codes instantly for payments in India</p>
 
-  <!-- 🔥 BACKLINK BUTTON -->
-  <a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank" id="heroBtn">
+  <!-- 🔗 BUTTON 1 -->
+  <a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank">
     <button class="btn">Use UPI QR Generator 🚀</button>
+  </a>
+
+  <br>
+
+  <!-- 🔗 BUTTON 2 -->
+  <a href="https://rohitsharma.co/upi-qr-code-generator/" target="_blank">
+    <button class="btn">Generate QR Code 💸</button>
   </a>
 </div>
 
-<!-- TOOL -->
-<div class="section container">
-<h2>Generate QR Code</h2>
+<!-- FEATURES -->
+<div class="section">
+  <h2>Why Use This Tool?</h2>
 
-<input type="text" id="upi" placeholder="Enter UPI ID">
-<input type="text" id="name" placeholder="Enter Name">
-<input type="number" id="amount" placeholder="Enter Amount">
-
-<br>
-<button class="btn" onclick="generateQR()">Generate QR Code</button>
-
-<div class="qr-box" id="qr"></div>
+  <div class="grid">
+    <div class="card">⚡ Instant QR Generation</div>
+    <div class="card">🔒 100% Secure</div>
+    <div class="card">📱 Works on All UPI Apps</div>
+    <div class="card">💸 Free Forever</div>
+  </div>
 </div>
 
-<script>
-function generateQR(){
- let upi=document.getElementById('upi').value;
- let name=document.getElementById('name').value;
- let amount=document.getElementById('amount').value;
+<!-- INFO -->
+<div class="section">
+  <h2>What is UPI QR Code?</h2>
+  <p>
+    UPI QR code allows instant payments using apps like Google Pay, PhonePe, and Paytm.
+    Simply scan and pay without entering details manually.
+  </p>
+</div>
 
- let url=`upi://pay?pa=${upi}&pn=${name}&am=${amount}&cu=INR`;
-
- document.getElementById('qr').innerHTML =
- `<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}">`;
-
- // 🔥 SCROLL TO HERO BUTTON
- let hero = document.getElementById('heroBtn');
- hero.scrollIntoView({behavior:'smooth'});
-
- // 🔥 HIGHLIGHT EFFECT
- hero.style.boxShadow = "0 0 20px #22c55e";
-
- setTimeout(()=>{
-   hero.style.boxShadow = "none";
- },2000);
-}
-</script>
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 UPI QR Generator | Made in India 🇮🇳</p>
+</div>
 
 </body>
 </html>
